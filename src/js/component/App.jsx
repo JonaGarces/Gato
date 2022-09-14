@@ -1,12 +1,10 @@
-import React, { Component } from "react";
+import React, {Component} from 'react'
+import './App.css'
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-import Announcement from './Announcement.jsx'
-import RessetButton from './RessetButton.jsx'
-import Tile from './Tile.jsx'
+import Announcement from './Announcement'
+import RessetButton from './RessetButton'
+import Tile from './Tile'
 
-//create your first component
 class App extends Component {
     constructor (){
         super();
@@ -15,13 +13,9 @@ class App extends Component {
                 ' ', ' ', ' ',
                 ' ', ' ', ' ',
                 ' ', ' ', ' '
-            ],
-			turn:'x'
+            ]
         }
     }
-	updateBoard(loc, player){
-
-	}
     render (){
         return (
             <div className='container'>
@@ -31,18 +25,11 @@ class App extends Component {
                     <RessetButton/>
                 </div>
                 {this.state.gameBoard.map(function(value, i){
-					return(
-					<Tile 
-					key={i}
-					Loc={i}
-					value={value}
-					updateBoard={this.updateBoard.bind(this)}
-					turn={this.state.turn}/>
-					)
-                    }.bind(this))}	 
+                    <Tile />
+                })}
             </div>
         );
     }
 }
 
-export default Home;
+export default App;
